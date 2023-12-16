@@ -13,7 +13,7 @@ function checkGuess() {
     const guess = parseInt(document.getElementById('guess-input').value);
     if (!isNaN(guess)) {
         if (guess === secretNumber) {
-            document.getElementById('hint').innerText = 'Поздравляем! Вы угадали число!';
+            document.getElementById('hint').innerText = 'поздравляем! вы угадали число!';
             document.getElementById('game-container').style.display = 'none';
         } else {
             const difference = Math.abs(secretNumber - guess);
@@ -27,15 +27,15 @@ function checkGuess() {
             lives--;
             updateLives();
             if (lives === 0) {
-                document.getElementById('hint').innerText = 'У вас закончились жизни. Игра окончена.';
+                document.getElementById('hint').innerText = 'у вас закончились жизни игра окончена.';
                 document.getElementById('game-container').style.display = 'none';
             }
         }
     } else {
-        document.getElementById('hint').innerText = 'Пожалуйста, введите число от 0 до 100.';
+        document.getElementById('hint').innerText = 'пожалуйста введите число от 0 до 100';
     }
 }
 
 function updateLives() {
-    document.getElementById('hint').innerText += ' Осталось жизней: ' + lives;
+    document.getElementById('hint').innerText += ' осталось жизней: ' + lives;
 }
